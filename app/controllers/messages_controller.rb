@@ -3,9 +3,6 @@ class MessagesController < ApplicationController
     if params[:room] || session[:room]
       session[:room] = params[:room]
       @room_messages = Message.where(room:params[:room])
-      puts @room_messages
-    else
-      #@messages = Message.all
     end
   end
 
