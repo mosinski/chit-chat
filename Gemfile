@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'rake', '0.8.7'
+ruby '2.1.1'
 gem 'rails', '3.0.5'
+gem 'rake', '0.8.7'
 gem 'sqlite3', group: :development
 gem 'pg', group: :production
 gem 'nifty-generators'
