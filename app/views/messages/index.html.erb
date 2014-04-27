@@ -13,7 +13,7 @@
   <% end %>
 
   <br><br>
-  Share <%= text_field_tag "share", root_url(room: session[:room]) %>
+  Share <%= text_field_tag "share", root_url(room: session[:room]), "onclick" => "this.select();" %>
 <% else %>
   <%= link_to "Generate Room", root_url(room: SecureRandom.random_number(2147483647)) %>
 <% end %>
