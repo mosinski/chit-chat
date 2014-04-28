@@ -1,5 +1,6 @@
 <% broadcast "/messages/new" do %>
   $("#chat-<%= session[:room] %>").append("<%= escape_javascript render(@message) %>");
   $("#chat-<%= session[:room] %>").animate({ scrollTop: $(this).height() }, "fast");
+  $("#chat-<%= session[:room] %>").emoticonize();
 <% end %>
 $("#new_message")[0].reset();
