@@ -1,19 +1,20 @@
-<% title "Lightning Chat" %>
-<% if session[:room] %>
-  <%= "Room: #{session[:room]}" %>
+<section class="page2" style="background:none">
+  <div class="row">
+    <% if session[:room] %>
+      <%= "Room: #{session[:room]}" %>
 
-  <ul class="chat" id="chat-<%= session[:room] %>">
-    <%= render @messages || @room_messages %>
-  </ul>
+      <ul class="chat" id="chat-<%= session[:room] %>">
+        <%= render @messages || @room_messages %>
+      </ul>
 
-  <%= form_for Message.new, :remote => true do |f| %>
-    <%= f.text_field :content %>
-    <%= f.hidden_field :room, value: session[:room] %>
-    <%= f.submit "Send" %>
-  <% end %>
+      <%= form_for Message.new, :remote => true do |f| %>
+        <%= f.text_field :content %>
+        <%= f.hidden_field :room, value: session[:room] %>
+        <%= f.submit "Send" %>
+      <% end %>
 
-  <br><br>
-  Share <%= text_field_tag "share", root_url(room: session[:room]), "onclick" => "this.select();" %>
-<% else %>
-  <%= link_to "Generate Room", root_url(room: SecureRandom.random_number(2147483647)) %>
-<% end %>
+      <br><br>
+      Share <%= text_field_tag "share", messages_url(room: session[:room]), "onclick" => "this.select();", :editable => "false" %>
+    <% end %>
+  </div>
+</section>
