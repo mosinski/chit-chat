@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>One-Click-Chat - An Easy to Use Free Chat</title>
+    <title>Chit-Chat - An Easy to Use Free Chat</title>
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
 
     <meta name="description" content="This template is an easy to use app landing page, responsive and pretty easy to customize including some great easing effects, modal window, a sticky header with share buttons & others stuff !" />
@@ -31,10 +31,10 @@
     <% if current_page?(root_url) %>
       <section class="page1">
         <div class="huge-title centered">
-          <div class="logo-phone centered"><img alt="YOURLOGO" src="/images/logo-phone.png"></div>
+          <div class="logo-phone centered"><img alt="mobile-logo" src="/images/logo-phone.png"></div>
           <h1>A Simple & Easy To Use Free Chat</h1>
           <div class="space"></div>
-          <%= link_to "Generate Chat Room Free", messages_url(room: SecureRandom.random_number(2147483647)), class: "button-white" %>
+          <div class="space"><%= link_to "Generate Chat Room Free", messages_url(room: SecureRandom.random_number(2147483647)), class: "button-green" %></div>
         </div>
 
         <div class="go-down twelve columns">
