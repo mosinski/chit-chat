@@ -19,13 +19,55 @@
     <link rel="stylesheet" href="stylesheets/style.css">
     <link rel="stylesheet" href="stylesheets/animate.css">
   </head>
+
   <body>
-    <div id="container">
-      <% flash.each do |name, msg| %>
-        <%= content_tag :div, msg, :id => "flash_#{name}" %>
-      <% end %>
-      <%= content_tag :h1, yield(:title) if show_title? %>
-      <%= yield %>
+    <div id="preloader">
+      <div id="loading-animation">&nbsp;</div>
     </div>
+    <div class="cbp-af-header">
+      <%= render "shared/nav" %>
+    </div>
+
+    <% if current_page?(root_url) %>
+      <section class="page1">
+        <div class="huge-title centered">
+          <div class="logo-phone centered"><img alt="YOURLOGO" src="/images/logo-phone.png"></div>
+          <h1>A Simple & Easy To Use Free Chat</h1>
+          <div class="space"></div>
+          <%= link_to "Free Generate Chat Room", messages_url(room: SecureRandom.random_number(2147483647)), class: "button-white" %>
+        </div>
+
+        <div class="go-down twelve columns">
+          <a href="#container" class="goto"><img src="/images/down.png" alt="MORE"></a>
+        </div>
+      </section>
+    <% end %>
+
+    <div id="container" class="container">
+      <%= yield %>
+
+      <section class="footer">
+        <div class="row">
+          <div class="nine columns centered">
+            <ul>
+              <li><a href="http://www.iamsupview.be">About Supview</a></li>
+              <li><a href="http://www.baribal.be/showpage/dl/">Get it</a></li>
+              <li><a href="http://dribbble.com/Supview">Dribbble</a></li>
+              <li><a href="http://www.facebook.com/Supview" rel="nofollow">Facebook</a></li>
+              <li><a href="http://twitter.com/Supview" rel="nofollow">Twitter</a></li>
+              <li><a href="http://www.behance.net/Supview" rel="nofollow">Behance</a></li>
+            </ul>
+            <p class="copyright">Showpage is a free app landing page made by <a href="http://www.iamsupview.be">Supview</a> and is under  <a href="http://creativecommons.org/licenses/by/4.0/">CC License</a> <br>© Copyright 2014 Supview. All rights reserved.</p>	
+            <img class="logo" src="images/logo.png" alt="Logo">
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="/javascripts/main.js" type="text/javascript"></script>
+    <script src="/javascripts/classie.js" type="text/javascript"></script>
+    <script src="/javascripts/waypoints.min.js" type="text/javascript"></script>
+    <script src="/javascripts/jquery.scrollto.js" type="text/javascript"></script>
+    <script src="/javascripts/mediaCheck.js" type="text/javascript"></script>
   </body>
 </html>
