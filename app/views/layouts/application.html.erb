@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+    <meta charset="utf-8">
+    <title>One-Click-Chat - An Easy to Use Free Chat</title>
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+
+    <meta name="description" content="This template is an easy to use app landing page, responsive and pretty easy to customize including some great easing effects, modal window, a sticky header with share buttons & others stuff !" />
+    <meta name="keywords" content="Free chat, one click chat, easy to use" />
+    <meta name="author" content="Miłosz Osiński">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
     <%= stylesheet_link_tag "application" %>
     <%= javascript_include_tag :defaults, "http://lightchat-server.herokuapp.com/faye.js" %>
     <%= csrf_meta_tag %>
     <%= yield(:head) %>
+
+    <link rel="stylesheet" href="stylesheets/gumby.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/animate.css">
   </head>
   <body>
     <div id="container">
