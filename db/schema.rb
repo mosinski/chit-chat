@@ -10,13 +10,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140424071131) do
+ActiveRecord::Schema.define(:version => 20140429111057) do
 
   create_table "messages", :force => true do |t|
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "room"
+    t.string   "author"
   end
 
 end

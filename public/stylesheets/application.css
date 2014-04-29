@@ -25,7 +25,7 @@ ul.chat li .created_at {
 }
 
 input#message_content {
-  width: 90%;
+  //width: 90%;
 }
 
 #share {

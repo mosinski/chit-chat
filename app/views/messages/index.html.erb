@@ -1,20 +1,38 @@
 <section class="page2" style="background:none">
   <div class="row">
     <% if session[:room] %>
-      <%= "Room: #{session[:room]}" %>
+      <span>Room: <b><%= session[:room] %></b>  Name: </span><span id="author-<%= session[:room] %>"><%= session[:author] %></span>
 
       <ul class="chat" id="chat-<%= session[:room] %>">
-        <%= render @messages || @room_messages %>
+        <%= render @room_messages %>
       </ul>
 
-      <%= form_for Message.new, :remote => true do |f| %>
-        <%= f.text_field :content %>
-        <%= f.hidden_field :room, value: session[:room] %>
-        <%= f.submit "Send" %>
-      <% end %>
+      <div class="field">
+        <%= form_for Message.new, :remote => true do |f| %>
+          <%= f.text_field :content, placeholder: "Message...", class: "xwide input" %>
+          <%= f.submit "Send", class: "xnarrow medium metro rounded btn secondary" %>
+        <% end %>
+      </div>
 
       <br><br>
       Share <%= text_field_tag "share", messages_url(room: session[:room]), "onclick" => "this.select();", :editable => "false" %>
+    <% end %>
+    <% if !session[:author] %>
+      <div class='modal is-visible' id='modal1' style='display:block;background:white;'>
+        <div class='modal-content modal-anim--three'>
+          <div class="row">
+            <div class="twelve columns centered text-center">
+              <h2>Set your name.</h2>
+              <div class="field">
+                <%= form_for Message.new, url: { action: "author" }, html: {class: "new_author", id: "new_author"}, remote: true do |f| %>
+                  <%= f.text_field :author, placeholder: "Your name...", required: true, class: "input" %>
+                  <%= f.submit "Set", class: "medium primary btn" %>
+                <% end %>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     <% end %>
   </div>
 </section>

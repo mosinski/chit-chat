@@ -7,6 +7,16 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = Message.create!(params[:message])
+    @message = Message.new(params[:message])
+    @message.room = session[:room]
+    @message.author = session[:author]
+    @message.save
+  end
+
+  def author
+    if params[:message][:author].present?
+      session[:author] = params[:message][:author]
+      @author = session[:author]
+    end
   end
 end
