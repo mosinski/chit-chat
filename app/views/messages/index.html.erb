@@ -1,41 +1,43 @@
 <section class="page2" style="background:none">
   <div class="row">
-    <% if session[:room] %>
-      <span>Room: <b><%= session[:room] %></b>  Name: </span><span id="author-<%= session[:room] %>"><%= session[:author] %></span>
+    <div class="centered six columns">
+      <% if session[:room] %>
+        <span>Room: <b><%= session[:room] %></b>  Name: </span><span id="author-<%= session[:room] %>"><%= session[:author] %></span>
 
-      <ul class="chat" id="chat-<%= session[:room] %>">
-        <%= render @room_messages %>
-      </ul>
+        <ul class="chat" id="chat-<%= session[:room] %>">
+          <%= render @room_messages %>
+        </ul>
 
-      <div class="field">
-        <%= form_for Message.new, :remote => true do |f| %>
-          <%= f.text_field :content, placeholder: "Message...", class: "xwide input" %>
-          <%= f.submit "Send", class: "xnarrow medium metro rounded btn secondary" %>
-        <% end %>
-      </div>
+        <div class="field">
+          <%= form_for Message.new, :remote => true do |f| %>
+            <%= f.text_field :content, placeholder: "Message...", class: "xwide input" %>
+            <%= f.submit "Send", class: "xnarrow medium metro rounded btn secondary" %>
+          <% end %>
+        </div>
 
-      <br><br>
-      <div class="append field">
-        <span class="adjoined">Share</span><%= text_field_tag "share", messages_url(room: session[:room]), class: "xwide text input", "onclick" => "this.select();", readonly: true %>
-      </div>
-    <% end %>
+        <br><br>
+        <div class="append field">
+          <span class="adjoined">Share</span><%= text_field_tag "share", messages_url(room: session[:room]), class: "xwide text input", "onclick" => "this.select();", readonly: true %>
+        </div>
+      <% end %>
 
-    <% if !session[:author] %>
-      <div class='modal is-visible' id='modal1' style='display:block;background:white;'>
-        <div class='modal-content modal-anim--three'>
-          <div class="row">
-            <div class="twelve columns centered text-center">
-              <h2>Set your name.</h2>
-              <div class="field">
-                <%= form_for Message.new, url: { action: "author" }, html: {class: "new_author", id: "new_author"}, remote: true do |f| %>
-                  <%= f.text_field :author, placeholder: "Your name...", required: true, class: "input" %>
-                  <%= f.submit "Set", class: "medium primary btn" %>
-                <% end %>
-              </p>
+      <% if !session[:author] %>
+        <div class='modal is-visible' id='modal1' style='display:block;background:white;'>
+          <div class='modal-content modal-anim--three'>
+            <div class="row">
+              <div class="twelve columns centered text-center">
+                <h2>Set your name.</h2>
+                <div class="field">
+                  <%= form_for Message.new, url: { action: "author" }, html: {class: "new_author", id: "new_author"}, remote: true do |f| %>
+                    <%= f.text_field :author, placeholder: "Your name...", required: true, class: "input" %>
+                    <%= f.submit "Set", class: "medium primary btn" %>
+                  <% end %>
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </section>
