@@ -25,11 +25,11 @@
         <div class='modal is-visible' id='modal1' style='display:block;background:white;'>
           <div class='modal-content modal-anim--three'>
             <div class="row">
-              <div class="twelve columns centered text-center">
+              <div class="centered twelve columns">
                 <h2>Set your name.</h2>
                 <div class="field">
                   <%= form_for Message.new, url: { action: "author" }, html: {class: "new_author", id: "new_author"}, remote: true do |f| %>
-                    <%= f.text_field :author, placeholder: "Your name...", required: true, class: "input" %>
+                    <%= f.text_field :author, placeholder: "Your name...", required: true, class: "input", size: nil %>
                     <%= f.submit "Set", class: "medium primary btn" %>
                   <% end %>
                 </p>
