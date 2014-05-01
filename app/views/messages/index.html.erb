@@ -16,13 +16,13 @@
         <div class="field">
           <%= form_for Message.new, :remote => true do |f| %>
             <%= f.text_field :content, placeholder: "Message...", class: "xwide input" %>
-            <%= f.submit "Send", class: "xnarrow medium metro rounded btn secondary" %>
+            <%= f.submit "Share", class: "xnarrow medium metro rounded btn secondary" %>
           <% end %>
         </div>
 
         <br><br>
         <div class="append field">
-          <span class="adjoined">Share</span><%= text_field_tag "share", messages_url(room: session[:room]), class: "xwide text input", "onclick" => "this.select();", readonly: true %>
+          <span class="adjoined"><i class="icon-share"></i> Share</span><%= text_field_tag "share", messages_url(room: session[:room]), class: "xwide text input", "onclick" => "this.select();", readonly: true %>
         </div>
       <% end %>
 
