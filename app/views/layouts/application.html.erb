@@ -33,6 +33,15 @@
     <% if current_page?(root_url) %>
       <section class="page1">
         <div class="huge-title centered">
+          <div class="logo-phone centered language">
+            <% if I18n.locale == I18n.default_locale %>
+              <%= link_to "Polish", :locale=>'pl' %>
+              <%= link_to "English", :locale=>'en' %>
+            <% else %>
+              <%= link_to "Polski", :locale=>'pl' %>
+              <%= link_to "Angielski", :locale=>'en' %>
+            <% end %>
+          </div>
           <div class="logo-phone centered"><img alt="mobile-logo" src="/images/logo-phone.png"></div>
           <h1>A Simple & Easy To Use Free Chat</h1>
           <div class="space"></div>

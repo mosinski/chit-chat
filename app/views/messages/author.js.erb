@@ -1,4 +1,4 @@
 $("#new_author").bind('ajax:success', function(xhr, data, status) {
   $("#modal1").hide();
-  $("#author-<%= session[:room] %>").append("<%= @author %>");
+  $("#author-<%= session[:room] %>").text("<%= @author %>");
 });
