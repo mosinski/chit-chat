@@ -202,3 +202,10 @@ en:
       long: ! '%B %d, %Y %H:%M'
       short: ! '%d %b %H:%M'
     pm: pm
+  language:
+    polish: "Polish"
+    english: "English"
+  static_pages:
+    start:
+      header_title: "A Simple & Easy To Use Free Chat"
+      header_button: "Generate Chat Room Free"

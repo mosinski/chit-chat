@@ -216,3 +216,10 @@ pl:
       long: ! '%B %d, %Y %H:%M'
       short: ! '%d %b %H:%M'
     pm: po południu
+  language:
+    polish: "Polski"
+    english: "Angielski"
+  static_pages:
+    start:
+      header_title: "Prosty I Łatwy W Użyciu Darmowy Czat"
+      header_button: "Wygeneruj Czatwy Pokój za Darmo"

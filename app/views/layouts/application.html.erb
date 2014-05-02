@@ -15,10 +15,10 @@
     <%= csrf_meta_tag %>
     <%= yield(:head) %>
 
-    <link rel="stylesheet" href="stylesheets/gumby.css">
-    <link rel="stylesheet" href="stylesheets/style.css">
-    <link rel="stylesheet" href="stylesheets/animate.css">
-    <link rel="stylesheet" href="stylesheets/cssemoticons.css">
+    <link rel="stylesheet" href="/stylesheets/gumby.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/animate.css">
+    <link rel="stylesheet" href="/stylesheets/cssemoticons.css">
     <script src="/javascripts/cssemoticons.min.js" type="text/javascript"></script>
   </head>
 
@@ -35,17 +35,17 @@
         <div class="huge-title centered">
           <div class="logo-phone centered language">
             <% if I18n.locale == I18n.default_locale %>
-              <%= link_to "Polish", :locale=>'pl' %>
-              <%= link_to "English", :locale=>'en' %>
+              <%= link_to t('language.polish'), :locale=>'pl' %>
+              <%= link_to t('language.english'), :locale=>'en' %>
             <% else %>
-              <%= link_to "Polski", :locale=>'pl' %>
-              <%= link_to "Angielski", :locale=>'en' %>
+              <%= link_to t('language.polish'), :locale=>'pl' %>
+              <%= link_to t('language.english'), :locale=>'en' %>
             <% end %>
           </div>
           <div class="logo-phone centered"><img alt="mobile-logo" src="/images/logo-phone.png"></div>
-          <h1>A Simple & Easy To Use Free Chat</h1>
+          <h1><%= t 'static_pages.start.header_title' %></h1>
           <div class="space"></div>
-          <div class="space"><%= link_to "Generate Chat Room Free", messages_url(room: SecureRandom.random_number(2147483647)), class: "button-green" %></div>
+          <div class="space"><%= link_to t('static_pages.start.header_button'), messages_url(room: SecureRandom.random_number(2147483647)), class: "button-green" %></div>
         </div>
 
         <div class="go-down twelve columns">
@@ -69,7 +69,7 @@
               <li><a href="http://www.behance.net/Supview" rel="nofollow">Behance</a></li>
             </ul>
             <p class="copyright">Showpage is a free app landing page made by <a href="http://www.iamsupview.be">Supview</a> and is under  <a href="http://creativecommons.org/licenses/by/4.0/">CC License</a> <br>© Copyright 2014 Supview. All rights reserved.</p>
-            <img class="logo" src="images/logo.png" alt="Logo">
+            <img class="logo" src="/images/logo.png" alt="Logo">
           </div>
         </div>
       </section>
