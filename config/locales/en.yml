@@ -209,3 +209,17 @@ en:
     start:
       header_title: "A Simple & Easy To Use Free Chat"
       header_button: "Generate Chat Room Free"
+      section_1_header: "Mobile Responsive Design"
+      section_1_content: "Our website is responsive, the layout and content responds (or, adapts) based on the size of the screen it’s presented on. It automatically changes to fit the device you’re reading it on."
+      section_2: ""
+      section_3: ""
+  messages:
+    modal:
+      name_header: "Set your name."
+      name_placeholder: "Your name..."
+      name_button: "Set"
+    name: "Name"
+    room: "Room"
+    placeholder: "Messages..."
+    send: "Send"
+    share: "Share"

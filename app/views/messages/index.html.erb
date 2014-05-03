@@ -3,9 +3,9 @@
     <div class="centered six columns">
       <% if session[:room] %>
         <div class="btn-group btn-breadcrumb">
-          <a class="btn" style="background:white">Room</a>
+          <a class="btn" style="background:white"><%= t('messages.room') %></a>
           <a class="btn" style="background:white"><%= session[:room] %></a>
-          <a class="btn" style="background:white">Name</a>
+          <a class="btn" style="background:white"><%= t('messages.name') %></a>
           <a class="btn" style="background:white" id="author-<%= session[:room] %>"><%= session[:author] %></a>
         </div>
 
@@ -15,14 +15,15 @@
 
         <div class="field">
           <%= form_for Message.new, :remote => true do |f| %>
-            <%= f.text_field :content, placeholder: "Message...", class: "xwide input" %>
-            <%= f.submit "Send", class: "xnarrow medium metro rounded btn secondary" %>
+            <%= f.text_field :content, placeholder: t('messages.placeholder'), class: "xwide input" %>
+            <%= f.submit t('messages.send'), class: "xnarrow medium metro rounded btn secondary" %>
           <% end %>
         </div>
 
         <br><br>
         <div class="append field">
-          <span class="adjoined"><i class="icon-share"></i> Share</span><%= text_field_tag "share", messages_url(room: session[:room]), class: "xwide text input", "onclick" => "this.select();", readonly: true %>
+          <span class="adjoined"><i class="icon-share"></i> <%= t('messages.share') %></span><%= text_field_tag "share", messages_url(room: session[:room]), class: "wide text input", "onclick" => "this.select();", readonly: true %>
+          <div class="medium primary btn"><a href="#"><i class="icon-facebook"></i></a></div>
         </div>
       <% end %>
 
@@ -31,11 +32,11 @@
           <div class='modal-content modal-anim--three'>
             <div class="row">
               <div class="centered twelve columns">
-                <h2>Set your name.</h2>
+                <h2><%= t('messages.modal.name_header') %></h2>
                 <div class="field">
                   <%= form_for Message.new, url: { action: "author" }, html: {class: "new_author", id: "new_author"}, remote: true do |f| %>
-                    <%= f.text_field :author, placeholder: "Your name...", required: true, class: "input", size: nil %>
-                    <%= f.submit "Set", class: "medium primary btn" %>
+                    <%= f.text_field :author, placeholder: t('messages.modal.name_placeholder'), required: true, class: "input", size: nil %>
+                    <%= f.submit t('messages.modal.name_button'), class: "medium primary btn" %>
                   <% end %>
                 </p>
               </div>

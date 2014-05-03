@@ -222,4 +222,17 @@ pl:
   static_pages:
     start:
       header_title: "Prosty I Łatwy W Użyciu Darmowy Czat"
-      header_button: "Wygeneruj Czatwy Pokój za Darmo"
+      header_button: "Wygeneruj Pokój za Darmo"
+      section_1_header: ""
+      section_2: ""
+      section_3: ""
+  messages:
+    modal:
+      name_header: "Podaj swoje imię."
+      name_placeholder: "Twoje imię..."
+      name_button: "Ustaw"
+    name: "Imię"
+    room: "Pokój"
+    placeholder: "Treść Wiadomości..."
+    send: "Wyślij"
+    share: "Udostępnij"
