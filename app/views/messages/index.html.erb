@@ -32,7 +32,7 @@
           <div class='modal-content modal-anim--three'>
             <div class="row">
               <div class="centered twelve columns">
-                <h2><%= t('messages.modal.name_header') %></h2>
+                <h1><%= t('messages.modal.name_header') %></h1>
                 <div class="field">
                   <%= form_for Message.new, url: { action: "author" }, html: {class: "new_author", id: "new_author"}, remote: true do |f| %>
                     <%= f.text_field :author, placeholder: t('messages.modal.name_placeholder'), required: true, class: "input", size: nil %>
