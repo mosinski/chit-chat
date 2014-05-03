@@ -223,7 +223,8 @@ pl:
     start:
       header_title: "Prosty I Łatwy W Użyciu Darmowy Czat"
       header_button: "Wygeneruj Pokój za Darmo"
-      section_1_header: ""
+      section_1_header: "Mobilny Responsywny Design"
+      section_1_content: "Nasza strona internetowa jest responsywna, układ i treść dostosowuje się w zależności od wielkości ekranu. Automatycznie zmienia się aby zmieścić do urządzenie na którym ją czytasz."
       section_2: ""
       section_3: ""
   messages:
