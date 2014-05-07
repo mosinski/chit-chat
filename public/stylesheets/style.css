@@ -471,11 +471,11 @@ nav {
 .footer p a:hover {color: rgba(255,255,255,1);}
 
 pre {
-  background: #333; 
-  font-size: 12px; 
-  line-height: normal; 
-  border: 10px solid #f1F3F4; 
-  padding: 20px; 
+  background: #333;
+  font-size: 12px;
+  line-height: normal;
+  border: 10px solid #f1F3F4;
+  padding: 20px;
   color:#ecd565;
 }
 
@@ -613,8 +613,6 @@ and (orientation : portrait) {
     height: auto;
     opacity: 1;
   }
-
   .picture {display: none;}
-
   .page1 .button-white {display: none;}
 }
